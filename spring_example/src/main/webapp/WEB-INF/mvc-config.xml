@@ -16,6 +16,12 @@
  	<context:component-scan base-package="kr.co.example" />
     
     <mvc:annotation-driven />
+    
+<!--     ApplicationContext 안에 이미 등록된 bean들의 Annotation을 활성화 하기 위해 사용된다. -->
+<!--     bean들이 XML로 등록됐는지 혹은 패키지 스캐닝을 통해 등록됐는지는 중요하지 않다. -->
+<!--     이미 스프링 컨텍스트에 의해 생성되어 저장된 bean들에 대해서 @Autowired와 @Qualifier Annotation을 인식할 수 있다. -->
+<!--     context:component-scan 을 설정했다면 아래 설정은 필요하지 않다. -->
+<!--     <context:annotation-config/> -->
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
 	        <!-- Example: a logical view name of 'showMessage' is mapped to '/WEB-INF/jsp/showMessage.jsp' -->
