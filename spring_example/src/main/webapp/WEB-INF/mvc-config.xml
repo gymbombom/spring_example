@@ -6,11 +6,15 @@
 		http://www.springframework.org/schema/beans https://www.springframework.org/schema/beans/spring-beans.xsd
 		http://www.springframework.org/schema/context https://www.springframework.org/schema/context/spring-context.xsd">
 
-    <!-- Uncomment and your base-package here:
+    <!-- Uncomment and your base-package here: 
          <context:component-scan
             base-package="org.springframework.samples.web"/>  -->
-
-
+	
+<!-- 	빈으로 등록 될 준비를 마친 클래스들을 스캔하여, 자동으로 빈으로 등록해준다. -->
+<!-- 	@Controller, @Service, @Component, @Repository 어노테이션을 붙인 -->
+<!--     클래스들이 빈으로 등록된다.  -->
+ 	<context:component-scan base-package="kr.co.example" />
+    
     <mvc:annotation-driven />
 
 	<bean class="org.springframework.web.servlet.view.InternalResourceViewResolver">
