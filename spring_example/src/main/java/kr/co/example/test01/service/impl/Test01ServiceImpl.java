@@ -15,7 +15,6 @@ public class Test01ServiceImpl implements Test01Service{
 	Test01Dao test01Dao;
 	
 
-	@Override
 	public Map<String, Object> selectTest01() {
 		return test01Dao.selectTest01();
 	}
