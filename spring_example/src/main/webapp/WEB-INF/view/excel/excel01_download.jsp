@@ -1,7 +1,6 @@
 <%@ page language="java" contentType="application/vnd.ms-excel;charset=UTF-8" pageEncoding="UTF-8"%>
 <%@page import="java.util.Calendar"%>
 <%@ page import="java.text.SimpleDateFormat" %>
-<%@ page import="java.util.Calendar" %>
 <%@ page import="java.net.URLEncoder" %>
 
 
@@ -26,6 +25,11 @@
 		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 
 		<title>엑셀파일 다운로드 Sample</title>
+		<style>
+		 	table,td,tr {
+		 		border:1px black solid;
+		 	}
+		</style>		 
 	</head>
 
 	<body>
