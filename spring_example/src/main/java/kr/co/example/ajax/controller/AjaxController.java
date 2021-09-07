@@ -1,5 +1,6 @@
 package kr.co.example.ajax.controller;
 import java.io.StringWriter;
+import java.util.HashMap;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,6 +13,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import com.fasterxml.jackson.databind.ObjectMapper;
 
@@ -49,6 +51,32 @@ public class AjaxController {
 		responseHeaders.add("Content-Type","text/html; charset=UTF-8");
 		
 		return new ResponseEntity<String>(sw.toString(), responseHeaders, HttpStatus.CREATED);
+	}
+	
+//=========================================================================================================================================
+	
+	@RequestMapping(value = "/ajax02")
+	public String ajax02 (Model model)
+	{
+		return "/ajax/ajax02";
+	}
+	
+	
+	@RequestMapping("/ajax02Submit")
+	@ResponseBody
+	public HashMap<String, Object> ajax02Submit( @RequestParam Map<String, Object> map) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		resultMap.put("success", true);
+		//resultMap.put("success", false);
+		
+		resultMap.put("korName", map.get("korName"));
+		resultMap.put("engName", map.get("engName"));
+		resultMap.put("age", map.get("age"));
+		resultMap.put("height", map.get("height"));
+		resultMap.put("weight", map.get("weight"));
+		
+		return resultMap;
 	}
 		
 }
