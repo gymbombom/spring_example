@@ -36,9 +36,18 @@ public class AjaxController {
 	@RequestMapping("/ajax01Submit")
 	public ResponseEntity<String> ajax01Submit( @ModelAttribute("ajaxVO") AjaxVO ajaxVO , ModelMap model) throws Exception {
 		ModelMap modelMap = new ModelMap();
-				
-		modelMap.put("key", ajaxVO.getKey());
-		modelMap.put("value", ajaxVO.getValue());
+		
+		//multipart-form-data 로 전송 시 한글이 깨질경우 아래와 같이 변환
+		//String korName = ajaxVO.getKorName();
+		//korName = new String(korName.getBytes("8859_1"), "utf-8");
+
+
+		
+		modelMap.put("korName", ajaxVO.getKorName());
+		modelMap.put("engName", ajaxVO.getEngName());
+		modelMap.put("age", ajaxVO.getAge());
+		modelMap.put("height", ajaxVO.getHeight());
+		modelMap.put("weight", ajaxVO.getWeight());
 		
 		
 		modelMap.put("success", true);
@@ -75,6 +84,30 @@ public class AjaxController {
 		resultMap.put("age", map.get("age"));
 		resultMap.put("height", map.get("height"));
 		resultMap.put("weight", map.get("weight"));
+		
+		return resultMap;
+	}
+	
+	
+	@RequestMapping(value = "/ajax03")
+	public String ajax03 (Model model)
+	{
+		return "/ajax/ajax03";
+	}
+	
+	@RequestMapping("/ajax03Submit")
+	@ResponseBody
+	public HashMap<String, Object> ajax03Submit( @ModelAttribute AjaxVO ajaxVO) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		resultMap.put("success", true);
+		//resultMap.put("success", false);
+		
+		resultMap.put("korName", ajaxVO.getKorName());
+		resultMap.put("engName", ajaxVO.getEngName());
+		resultMap.put("age", ajaxVO.getAge());
+		resultMap.put("height", ajaxVO.getHeight());
+		resultMap.put("weight", ajaxVO.getWeight());
 		
 		return resultMap;
 	}

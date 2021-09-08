@@ -6,7 +6,8 @@
     
 <html>
 	<head>
-		<meta charset="utf-8">
+		<!-- meta 정보가 있어야 Excel 한글 정상 출력 가능함  -->
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 		<title>Ajax01</title>
 		<script
   			src="https://code.jquery.com/jquery-3.6.0.js"
@@ -29,10 +30,8 @@
 						}else{
 							alert("실패!!!!");
 						}
-						
-
-						alert("key :"+ result.key+"\n"+"value :"+result.value);
-
+						console.log(result);
+						alert(result.korName);
 					},
 					error:function(request,status,error){
 						alert(error);
@@ -42,13 +41,12 @@
 		</script>
 	</head> 
 	<body>
-		<form id="ajaxVO" method="POST" enctype="multipart/form-data">
-			<span>
-				key :<input type="text" name="key"/>
-			</span>
-			<span>
-				value : <input type="text" name="value"/>
-			</span>
+		<form id="ajaxVO" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
+			한글이름: <input type="text" name="korName" value="홍길동">
+			영문이름: <input type="text" name="engName" value="Hong Kil Dong">
+			나이: <input type="number" name="age" value=20>
+			키: <input type="text" name="height" value="180.2">
+			몸무게: <input type="number" name="weight" value=68.3>
 			<button onclick="fn_submit();">submit</button>
 		</form>
 	</body>
