@@ -1,6 +1,7 @@
 package kr.co.example.ajax.controller;
 import java.io.StringWriter;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -160,6 +161,36 @@ public class AjaxController {
 		resultMap.put("height", map.get("height"));
 		resultMap.put("weight", map.get("weight"));
 		
+		return resultMap;
+	}
+
+//=========================================================================================================================================
+	@RequestMapping(value = "/ajax06")
+	public String ajax06 (Model model)
+	{
+		return "/ajax/ajax06";
+	}
+	
+	@RequestMapping("/ajax06Submit")
+	@ResponseBody
+	public HashMap<String, Object> ajax06Submit( @RequestBody  List<Map<String, Object>> list) throws Exception {
+		HashMap<String, Object> resultMap = new HashMap<String, Object>();
+		
+		resultMap.put("success", true);
+		//resultMap.put("success", false);
+				
+		for(int i = 0; i < list.size(); i++) {
+			Map<String, Object> map = new HashMap<String, Object>();
+			
+			if(i == 1) {
+				map = list.get(i);
+				resultMap.put("korName", map.get("korName"));
+				resultMap.put("engName", map.get("engName"));
+				resultMap.put("age", map.get("age"));
+				resultMap.put("height", map.get("height"));
+				resultMap.put("weight", map.get("weight"));
+			}
+		}
 		return resultMap;
 	}
 	
