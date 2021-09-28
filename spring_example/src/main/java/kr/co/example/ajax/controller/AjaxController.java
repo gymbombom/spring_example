@@ -14,6 +14,7 @@ import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
@@ -28,14 +29,14 @@ public class AjaxController {
 	@Autowired
 	Test01Service test01Service;
 	
-	@RequestMapping(value = "/ajax01")
+	@RequestMapping(value="/ajax01", method={RequestMethod.GET, RequestMethod.POST})
 	public String ajax01 (Model model)
 	{
 		return "/ajax/ajax01";
 	}
 	
 	
-	@RequestMapping("/ajax01Submit")
+	@RequestMapping(value="/ajax01Submit", method={RequestMethod.POST})
 	public ResponseEntity<String> ajax01Submit( @ModelAttribute("ajaxVO") AjaxVO ajaxVO , ModelMap model) throws Exception {
 		ModelMap modelMap = new ModelMap();
 		
@@ -66,14 +67,14 @@ public class AjaxController {
 	
 //=========================================================================================================================================
 	
-	@RequestMapping(value = "/ajax02")
+	@RequestMapping(value="/ajax02", method={RequestMethod.GET,RequestMethod.POST})
 	public String ajax02 (Model model)
 	{
 		return "/ajax/ajax02";
 	}
 	
 	
-	@RequestMapping("/ajax02Submit")
+	@RequestMapping(value="/ajax02Submit", method = {RequestMethod.POST})
 	@ResponseBody
 	public HashMap<String, Object> ajax02Submit( @RequestParam Map<String, Object> map) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
@@ -92,13 +93,13 @@ public class AjaxController {
 	
 //=========================================================================================================================================
 	
-	@RequestMapping(value = "/ajax03")
+	@RequestMapping(value="/ajax03", method={RequestMethod.GET,RequestMethod.POST})
 	public String ajax03 (Model model)
 	{
 		return "/ajax/ajax03";
 	}
 	
-	@RequestMapping("/ajax03Submit")
+	@RequestMapping(value="/ajax03Submit", method={RequestMethod.POST})
 	@ResponseBody
 	public HashMap<String, Object> ajax03Submit( @ModelAttribute AjaxVO ajaxVO) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
@@ -116,13 +117,13 @@ public class AjaxController {
 	}
 		
 //=========================================================================================================================================
-	@RequestMapping(value = "/ajax04")
+	@RequestMapping(value = "/ajax04", method={RequestMethod.GET,RequestMethod.POST})
 	public String ajax04 (Model model)
 	{
 		return "/ajax/ajax04";
 	}
 	
-	@RequestMapping("/ajax04Submit")
+	@RequestMapping(value="/ajax04Submit", method={RequestMethod.POST})
 	@ResponseBody
 	public HashMap<String, Object> ajax04Submit( @RequestParam Map<String, Object> map) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
@@ -141,13 +142,13 @@ public class AjaxController {
 	
 //=========================================================================================================================================
 	
-	@RequestMapping(value = "/ajax05")
+	@RequestMapping(value="/ajax05", method={RequestMethod.GET,RequestMethod.POST})
 	public String ajax05 (Model model)
 	{
 		return "/ajax/ajax05";
 	}
 	
-	@RequestMapping("/ajax05Submit")
+	@RequestMapping(value="/ajax05Submit", method={RequestMethod.POST})
 	@ResponseBody
 	public HashMap<String, Object> ajax05Submit( @RequestBody Map<String, Object> map) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();
@@ -165,13 +166,13 @@ public class AjaxController {
 	}
 
 //=========================================================================================================================================
-	@RequestMapping(value = "/ajax06")
+	@RequestMapping(value="/ajax06", method={RequestMethod.GET,RequestMethod.POST})
 	public String ajax06 (Model model)
 	{
 		return "/ajax/ajax06";
 	}
 	
-	@RequestMapping("/ajax06Submit")
+	@RequestMapping(value="/ajax06Submit", method={RequestMethod.POST})
 	@ResponseBody
 	public HashMap<String, Object> ajax06Submit( @RequestBody  List<Map<String, Object>> list) throws Exception {
 		HashMap<String, Object> resultMap = new HashMap<String, Object>();

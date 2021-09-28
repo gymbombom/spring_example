@@ -11,32 +11,33 @@ import org.springframework.stereotype.Controller;
 
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 
 @Controller
 public class ExcelController {
 
 	// JSP Excel 다운로드 view
-	@RequestMapping(value="/excel01")
+	@RequestMapping(value="/excel01", method={RequestMethod.GET,RequestMethod.POST})
 	public String excel01(ModelMap model)throws RuntimeException{
 		return "excel/excel01";
 	}
 	
 	// JSP 엑셀 다운로드 Controller
-	@RequestMapping(value="/excel01_download.do")
+	@RequestMapping(value="/excel01_download.do", method={RequestMethod.GET,RequestMethod.POST})
 	public String excel01_download( ModelMap model)throws RuntimeException{		
 		return "excel/excel01_download";
 	}
 	
 	// POI Excel 다운로드 view
-	@RequestMapping(value="/excel02")
+	@RequestMapping(value="/excel02", method={RequestMethod.GET,RequestMethod.POST})
 	public String excel02()throws RuntimeException{
 		return "excel/excel02";
 	}
 	
 	// POI 엑셀 다운로드 Controller
-	@RequestMapping(value="/excel02_download")
-	public String excel02_download( ModelMap model)throws RuntimeException{		
+	@RequestMapping(value="/excel02_download", method={RequestMethod.GET,RequestMethod.POST})
+	public String excel02_download(ModelMap model)throws RuntimeException{		
 		//workBook 생성
 		SXSSFWorkbook workBook =  new SXSSFWorkbook(); 
         
