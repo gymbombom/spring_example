@@ -13,10 +13,10 @@
     	<property name="driverClass" value="org.sqlite.JDBC" />
     	
     	<!-- MacOS -->
-<!--     	<property name="url" value="jdbc:sqlite:/Users/leeilkyu/Desktop/sqlite-tools-osx-x86-3350200/test.db" /> -->
+    	<property name="url" value="jdbc:sqlite:/Applications/spring_example/DB_file/test.db" />
     	
     	<!-- Windows -->
-    	<property name="url" value="jdbc:sqlite:C:\spring_example\DB_file\test.db" />
+<!--     	<property name="url" value="jdbc:sqlite:C:\spring_example\DB_file\test.db" /> -->
 	</bean> 
 	
 	<bean id="transactionManager"
