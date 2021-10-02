@@ -9,4 +9,4 @@ insert into test
 values
 (
 	'test'
-)
+);

@@ -18,8 +18,8 @@ public class Test01Controller {
 	@RequestMapping(value="/test01", method={RequestMethod.GET,RequestMethod.POST})
 	public String home(Model model)
 	{
-		Map<String, Object> testmap = test01Service.selectTest01();
-		model.addAttribute("message", testmap);
+		Map<String, Object> testMap = test01Service.selectTest01();
+		model.addAttribute("testMap", testMap);
 		return "/test01/test01";
 	}
 	
