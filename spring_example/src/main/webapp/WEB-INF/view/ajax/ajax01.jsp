@@ -16,7 +16,7 @@
 		</script>
 		
 		<script>
-			function fn_submit(){
+			var fn_submit = function(){
 				$.ajax({
 					type :'POST',
 					url  : "<c:url value='/ajax01Submit'/>",
@@ -41,6 +41,7 @@
 		</script>
 	</head> 
 	<body>
+		<p>multipart/form-data Ajax호출</p>
 		<form id="ajaxVO" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
 			한글이름: <input type="text" name="korName" value="홍길동">
 			영문이름: <input type="text" name="engName" value="Hong Kil Dong">
