@@ -14,7 +14,7 @@
 	</script>
 		
 	<script>
-		function submit(){
+		var submit = function(){
 	        var form = {
 	                korName: "홍길동",
 	                engName: "Hong gil-dong",
@@ -39,6 +39,7 @@
 		}
 	</script>
 	<body>
+		<p>Json 전송</p>
 		<button onclick="submit();">submit</button>
 	</body>
 </html>

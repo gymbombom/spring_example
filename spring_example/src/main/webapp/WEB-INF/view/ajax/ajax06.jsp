@@ -14,7 +14,7 @@
 	</script>
 		
 	<script>
-		function submit(){
+		var submit = function(){
 			
 		 	var jsonArray = [];	
 			
@@ -56,6 +56,7 @@
 		}
 	</script>
 	<body>
+		<p>JsonArray 를 controller에서 처히방</p>
 		<button onclick="submit();">submit</button>
 	</body>
 </html>

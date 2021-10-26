@@ -14,7 +14,7 @@
 	</script>
 		
 	<script>
-		function submit(){
+		var submit = function(){
 			$.ajax({
 				  url : "<c:url value='/ajax02Submit'/>"
 				, data : $("#form").serialize()
@@ -33,6 +33,7 @@
 		}
 	</script>
 	<body>
+		<p>Form을 Ajax로 전송 controller에서 map으로 처리<</p>
 		<form id="form" name="form">
 		한글이름: <input type="text" name="korName" value="홍길동">
 		영문이름: <input type="text" name="engName" value="Hong Kil Dong">
