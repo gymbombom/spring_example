@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="kr.co.example.test01.dao.Test02Dao">
+	
+
+<select id="selectCateList" resultType="hashMap">
+<![CDATA[
+	SELECT 
+		cate_id,
+		cate_desc
+	FROM
+		category
+]]>
+</select>
+
+
+<select id="selectEqList" resultType="hashMap">
+<![CDATA[
+	SELECT 
+		eq_id,
+		eq_desc,
+		cate_id as parent
+	FROM
+		equipment
+]]>
+</select>
+
+<select id="selectCompoList" resultType="hashMap">
+<![CDATA[
+	SELECT 
+		compo_id,
+		compo_desc,
+		eq_id as parent
+	FROM
+		component
+]]>
+</select>
+		
+</mapper>
