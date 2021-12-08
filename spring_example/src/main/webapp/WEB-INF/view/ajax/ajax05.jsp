@@ -42,6 +42,7 @@
 		}
 	</script>
 	<body>
+		<p>JSON으로 전송=> Controller에서 @requestBody로 받음</p>
 		<button onclick="submit();">submit</button>
 	</body>
 </html>

@@ -56,7 +56,7 @@
 		}
 	</script>
 	<body>
-		<p>JsonArray 를 controller에서 처히방</p>
+		<p>JsonArray 를 controller에서 처리</p>
 		<button onclick="submit();">submit</button>
 	</body>
 </html>

@@ -39,7 +39,7 @@
 		}
 	</script>
 	<body>
-		<p>Json 전송</p>
+		<p>Json 전송 => Controller에서 Map으로 받음</p>
 		<button onclick="submit();">submit</button>
 	</body>
 </html>
