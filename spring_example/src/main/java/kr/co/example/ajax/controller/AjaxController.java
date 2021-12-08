@@ -216,5 +216,28 @@ public class AjaxController {
 				
 		return resultMap;
 	}	
-	
+
+	//=========================================================================================================================================
+
+		@RequestMapping(value="/ajax08", method={RequestMethod.GET,RequestMethod.POST})
+		public String ajax08 (Model model)
+		{
+			return "/ajax/ajax08";
+		}
+		
+		@RequestMapping(value="/ajax08Submit", method={RequestMethod.POST})
+		@ResponseBody
+		public HashMap<String, Object> ajax08Submit( @RequestBody AjaxVO ajaxVO) throws Exception {
+			HashMap<String, Object> resultMap = new HashMap<String, Object>();
+			
+			System.out.println(ajaxVO.getKorName());
+			System.out.println(ajaxVO.getSubAjaxVO().getKorName());
+			
+			resultMap.put("success", true);
+			//resultMap.put("success", false);
+			
+			resultMap.put("subAjaxVO", ajaxVO.getSubAjaxVO());
+					
+			return resultMap;
+		}	
 }

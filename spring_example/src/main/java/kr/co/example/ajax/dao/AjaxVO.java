@@ -1,11 +1,16 @@
 package kr.co.example.ajax.dao;
 
+import java.util.List;
+
 public class AjaxVO {
 	String korName;
 	String engName;
 	Integer age;
 	String height;
 	double weight;
+	AjaxVO subAjaxVO;
+	
+	List<AjaxVO> ajaxVOList;
 	
 	
 	public String getKorName() {
@@ -37,6 +42,18 @@ public class AjaxVO {
 	}
 	public void setWeight(double weight) {
 		this.weight = weight;
+	}
+	public AjaxVO getSubAjaxVO() {
+		return subAjaxVO;
+	}
+	public void setSubAjaxVO(AjaxVO subAjaxVo) {
+		this.subAjaxVO = subAjaxVo;
+	}
+	public List<AjaxVO> getAjaxVOList() {
+		return ajaxVOList;
+	}
+	public void setAjaxVOList(List<AjaxVO> ajaxVOList) {
+		this.ajaxVOList = ajaxVOList;
 	}
 	
 		
