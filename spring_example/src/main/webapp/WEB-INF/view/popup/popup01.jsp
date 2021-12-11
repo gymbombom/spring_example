@@ -28,11 +28,6 @@
 	<body>
 		<p>popup</p>
 		<form id="ajaxVO" method="POST" enctype="multipart/form-data" accept-charset="UTF-8">
-<!-- 			한글이름: <input type="text" name="korName" value="홍길동"> -->
-<!-- 			영문이름: <input type="text" name="engName" value="Hong Kil Dong"> -->
-<!-- 			나이: <input type="number" name="age" value=20> -->
-<!-- 			키: <input type="text" name="height" value="180.2"> -->
-<!-- 			몸무게: <input type="number" name="weight" value=68.3> -->
 			<button onclick="fnPopupCall();">popup Call</button>
 		</form>
 	</body>
