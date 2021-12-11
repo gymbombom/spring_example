@@ -16,7 +16,7 @@
 		</script>
 
 		<script>
-			var fnPopupCall = function(){;
+			var fnPopupCall = function(){
 				var url = "";
 				var name = "popup03";
 				var option = "width=500, height=500, top=100, left=200, scrollbars=no, location=no, toolbars=no, status=no";

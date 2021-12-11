@@ -16,7 +16,7 @@
 		</script>
 
 		<script>
-			var fnPopupCall = function(){;
+			var fnPopupCall = function(){
 				var param = $("#form").serialize()
 				var url = "/popup02Call?"+param;
 				var name = "popup01";
