@@ -47,4 +47,19 @@ public class PopupController {
 	{
 		return "/popup/popup03Call";
 	}
+	
+//=========================================================================================================================================
+	@RequestMapping(value="/popup04", method={RequestMethod.GET, RequestMethod.POST})
+	public String popup04 (Model model)
+	{
+		return "/popup/popup04";
+	}
+	
+	@RequestMapping(value="/popup04Call", method={RequestMethod.GET, RequestMethod.POST})
+	public String popup04Call (Model model)
+	{
+		return "/popup/popup04Call";
+	}
+	
+	
 }
