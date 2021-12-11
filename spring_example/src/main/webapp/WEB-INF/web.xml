@@ -39,4 +39,21 @@ https://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
         <url-pattern>/</url-pattern>
     </servlet-mapping>
 
+<!-- 	https://killsia.tistory.com/entry/Spring%EC%97%90%EC%84%9C-post-%EB%B0%A9%EC%8B%9D%EC%9C%BC%EB%A1%9C-%EC%A0%84%EB%8B%AC-%EC%8B%9C-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%ED%95%B4%EA%B2%B0form%EB%8D%B0%EC%9D%B4%ED%84%B0-%EC%A0%84%EC%86%A1 -->
+    <filter>
+        <filter-name>encodingFilter</filter-name>
+        <filter-class>org.springframework.web.filter.CharacterEncodingFilter</filter-class>
+        <init-param>
+              <param-name>encoding</param-name>
+              <param-value>UTF-8</param-value>
+        </init-param>
+    </filter>
+	<filter-mapping>
+        <filter-name>encodingFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+	</filter-mapping>
+
+
+
+
 </web-app>
