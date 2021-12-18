@@ -1,10 +1,11 @@
-package kr.co.example.test01.service;
+package kr.co.example.test.service;
 
 import java.util.List;
 import java.util.Map;
 
 
-public interface Test02Service {
+public interface TestService {
+	public Map<String, Object> selectTest01();
 	
 	public List<Map<String, Object>> selectCateList();
 	public List<Map<String, Object>> selectEqList();
