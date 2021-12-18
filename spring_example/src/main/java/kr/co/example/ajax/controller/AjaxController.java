@@ -21,13 +21,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import com.fasterxml.jackson.databind.ObjectMapper;
 
 import kr.co.example.ajax.dao.AjaxVO;
-import kr.co.example.test01.service.Test01Service;
+import kr.co.example.test.service.TestService;
 
 @Controller
 public class AjaxController {
-
-	@Autowired
-	Test01Service test01Service;
 	
 	@RequestMapping(value="/ajax01", method={RequestMethod.GET, RequestMethod.POST})
 	public String ajax01 (Model model)
